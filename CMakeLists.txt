@@ -1,7 +1,7 @@
 cmake_minimum_required (VERSION 3.6)
 
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
-set(BOT_NAME "templatebot")
+set(BOT_NAME "bwbot")
 
 project(${BOT_NAME})
 aux_source_directory("src" coresrc)
@@ -46,26 +46,13 @@ if (DPP_FOUND)
     target_link_libraries(${BOT_NAME} ${DPP_LIBRARIES})
     target_include_directories(${BOT_NAME} PUBLIC ${DPP_INCLUDE_DIR})
 else()
-    message(WARNING "Could not find DPP install. Building from source instead.")
-    option(DPP_BUILD_TEST "" OFF)
-    include(FetchContent)
-
-    FetchContent_Declare(
-            libdpp
-            GIT_REPOSITORY https://github.com/brainboxdotcc/DPP.git
-            GIT_TAG master)
-
-    FetchContent_GetProperties(libdpp)
-    if(NOT libdpp_POPULATED)
-        FetchContent_Populate(libdpp)
-        target_include_directories(${BOT_NAME} PUBLIC
-            ${libdpp_SOURCE_DIR}/include
-        )
-        add_subdirectory(
-            ${libdpp_SOURCE_DIR}
-            ${libdpp_BINARY_DIR}
-            EXCLUDE_FROM_ALL)
+    if (APPLE)
+        message(WARNING "Could not find DPP install. run `curl -sL https://bit.ly/dpp-osx | bash` command")
+    elseif (UNIX)
+        message(WARNING "Could not find DPP install. run `curl -sL https://bit.ly/dpp-linux | bash` command")
+    elseif (WIN32)
+        message(WARNING "Could not find DPP install. run `irm https://bit.ly/dpp-win | iex` command")
+    else()
+        message(WARNING "Could not find DPP install. try building it from source")
     endif()
-
-    target_link_libraries(${BOT_NAME} dpp)
 endif()

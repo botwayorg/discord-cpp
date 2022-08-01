@@ -1,4 +1,4 @@
-# D++ CMake Template (templatebot)
+# D++ CMake Template (bwbot)
 
 CMake template for a simple [D++](https://dpp.dev) bot. This template assumes that D++ is already installed.
 
@@ -9,7 +9,7 @@ CMake template for a simple [D++](https://dpp.dev) bot. This template assumes th
     cmake ..
     make -j
 
-If DPP is installed in a different location you can specify the root directory to look in while running cmake 
+If DPP is installed in a different location you can specify the root directory to look in while running cmake
 
     cmake .. -DDPP_ROOT_DIR=<your-path>
 
@@ -24,7 +24,7 @@ Create a config.json in the directory above the build directory:
 Start the bot:
 
     cd build
-    ./templatebot
+    ./bwbot
 
 ## Extending the bot
 
@@ -32,4 +32,4 @@ You can add as many header files and .cpp files into the src and include folders
 
 ## Renaming the bot
 
-To rename the bot, search and replace "templatebot" in the `CMakeLists.txt` with your new bots name and then rename the templatebot folder in include. Rerun `cmake ..` from the `build` directory and rebuild.
+To rename the bot, search and replace "bwbot" in the `CMakeLists.txt` with your new bots name and then rename the bwbot folder in include. Rerun `cmake ..` from the `build` directory and rebuild.
