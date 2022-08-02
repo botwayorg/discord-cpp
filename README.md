@@ -1,35 +1,12 @@
-# D++ CMake Template (bwbot)
+# Botway Discord C++ Bot Template.
 
-CMake template for a simple [D++](https://dpp.dev) bot. This template assumes that D++ is already installed.
+> This is a template for a Discord C++ bot With [D++](https://dpp.dev) library.
 
-## Compilation
+## Build
 
-    mkdir build
-    cd build
-    cmake ..
-    make -j
-
-If DPP is installed in a different location you can specify the root directory to look in while running cmake
-
-    cmake .. -DDPP_ROOT_DIR=<your-path>
-
-## Running the template bot
-
-Create a config.json in the directory above the build directory:
-
-```json
-{ "token": "your bot token here" }
+```bash
+mkdir build
+cd build
+cmake ..
+make -j
 ```
-
-Start the bot:
-
-    cd build
-    ./bwbot
-
-## Extending the bot
-
-You can add as many header files and .cpp files into the src and include folders as you wish. All .cpp files in the src directory will be linked together into the bot's executable.
-
-## Renaming the bot
-
-To rename the bot, search and replace "bwbot" in the `CMakeLists.txt` with your new bots name and then rename the bwbot folder in include. Rerun `cmake ..` from the `build` directory and rebuild.
