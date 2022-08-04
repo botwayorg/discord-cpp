@@ -1,12 +1,12 @@
 #include <dpp/dpp.h>
-#include <bwbot/bwbot.h>
+#include <{{.BotName}}/{{.BotName}}.h>
 #include <sstream>
 #include "botway/botway.h"
 
 using namespace std;
 
 int main(int argc, char const *argv[]) {
-    dpp::cluster bot(Get("bwbot", "token"));
+    dpp::cluster bot(Get("{{.BotName}}", "token"));
 
     bot.on_log(dpp::utility::cout_logger());
 

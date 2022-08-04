@@ -1,5 +1,5 @@
 #pragma once
-#include <bwbot/bwbot.h>
+#include <{{.BotName}}/{{.BotName}}.h>
 #include <sstream>
 
 using namespace std;
