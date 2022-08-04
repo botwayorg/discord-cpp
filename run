@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [ -d build ]; then
+    cd build; make -j
+else
+    mkdir build
+    cd build
+    cmake ..
+    make -j
+fi
