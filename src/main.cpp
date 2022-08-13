@@ -1,7 +1,7 @@
 #include <dpp/dpp.h>
 #include <{{.BotName}}/{{.BotName}}.h>
 #include <sstream>
-#include "botway/botway.h"
+#include "botway/botway.hpp"
 
 using namespace std;
 
